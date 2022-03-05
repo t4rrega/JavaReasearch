@@ -46,31 +46,37 @@
 
 
     <!-- 3.配置多视图解析器ContentNegotiatingViewResolver：使用了不同的请求方式去请求同一个资源，返回各自的形式 -->
-    <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
-        <property name="favorParameter" value="true"/>
-        <property name="defaultContentType" value="text/html"/>
-        <property name="mediaTypes">
-            <map>
-                <entry key="html" value="text/html;charset=UTF-8"/>
-                <entry key="json" value="application/json;charset=UTF-8"/>
-                <entry key="xml" value="application/xml;charset=UTF-8"/>
-            </map>
-        </property>
-        <!-- InternalResourceViewResolver是jsp的视图解析器，在无法匹配到html、json、xml的情况下，会返回jsp的视图-->
-        <property name="viewResolvers">
-            <list>
-                <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
-                    <property name="prefix" value="/WEB-INF/jsp/"/>
-                    <property name="suffix" value=".jsp"/>
-                </bean>
-            </list>
-        </property>
-    </bean>
+<!--    <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">-->
+<!--        <property name="favorParameter" value="true"/>-->
+<!--        <property name="defaultContentType" value="text/html"/>-->
+<!--        <property name="mediaTypes">-->
+<!--            <map>-->
+<!--                <entry key="html" value="text/html;charset=UTF-8"/>-->
+<!--                <entry key="json" value="application/json;charset=UTF-8"/>-->
+<!--                <entry key="xml" value="application/xml;charset=UTF-8"/>-->
+<!--            </map>-->
+<!--        </property>-->
+<!--        &lt;!&ndash; InternalResourceViewResolver是jsp的视图解析器，在无法匹配到html、json、xml的情况下，会返回jsp的视图&ndash;&gt;-->
+<!--        <property name="viewResolvers">-->
+<!--            <list>-->
+<!--                <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" >-->
+<!--                    <property name="prefix" value="/WEB-INF/jsp/"/>-->
+<!--                    <property name="suffix" value=".jsp"/>-->
+<!--                </bean>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--    </bean>-->
 
     <!--4.如何引入静态资源文件-->
     <mvc:resources location="/statics/" mapping="/statics/**"/>
 
     <!--5.拦截器 interceptors-->
+<!--    <mvc:interceptors>-->
+<!--        <mvc:interceptor>-->
+<!--            <mvc:mapping path="/itp/index"/>-->
+<!--            <bean class="com.test.interceptor.HelloInterceptor"/>-->
+<!--        </mvc:interceptor>-->
+<!--    </mvc:interceptors>-->
 
 
     <!-- 6.配置MultipartResolver，用于上传文件，使用spring的CommonsMultipartResolver -->
