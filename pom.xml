@@ -12,6 +12,7 @@
         <module>WebVul</module>
         <module>fastjson</module>
         <module>Instrumentation</module>
+        <module>Exploit</module>
     </modules>
 
     <properties>

