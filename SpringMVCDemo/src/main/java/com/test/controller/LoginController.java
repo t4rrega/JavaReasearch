@@ -35,6 +35,7 @@ public class LoginController {
     @RequestMapping(value = "/doLogin")
     public String doLogin(@RequestParam(value = "userCode") String userCode,
                           @RequestParam(value = "userPassword") String password,
+                          @RequestParam(value = "userPhone") String phone,
                           HttpSession session,
                           HttpServletRequest request){
         logger.debug("enter LoginController =====>doLogin method");
