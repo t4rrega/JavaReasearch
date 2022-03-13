@@ -13,7 +13,7 @@
         <module>fastjson</module>
         <module>Instrumentation</module>
         <module>Exploit</module>
-        <module>GUI</module>
+        <module>TomcatDemo</module>
     </modules>
 
     <properties>
