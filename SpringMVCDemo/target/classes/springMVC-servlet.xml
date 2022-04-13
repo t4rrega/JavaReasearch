@@ -45,7 +45,7 @@
 
 
 
-    <!-- 3.配置多视图解析器ContentNegotiatingViewResolver：使用了不同的请求方式去请求同一个资源，返回各自的形式 -->
+<!--     3.配置多视图解析器ContentNegotiatingViewResolver：使用了不同的请求方式去请求同一个资源，返回各自的形式 -->
     <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
         <property name="favorParameter" value="true"/>
         <property name="defaultContentType" value="text/html"/>
@@ -71,12 +71,12 @@
     <mvc:resources location="/statics/" mapping="/statics/**"/>
 
     <!--5.拦截器 interceptors-->
-<!--    <mvc:interceptors>-->
-<!--        <mvc:interceptor>-->
-<!--            <mvc:mapping path="/itp/index"/>-->
-<!--            <bean class="com.test.interceptor.HelloInterceptor"/>-->
-<!--        </mvc:interceptor>-->
-<!--    </mvc:interceptors>-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/itp/index"/>
+            <bean class="com.test.interceptor.HelloInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
 
     <!-- 6.配置MultipartResolver，用于上传文件，使用spring的CommonsMultipartResolver -->

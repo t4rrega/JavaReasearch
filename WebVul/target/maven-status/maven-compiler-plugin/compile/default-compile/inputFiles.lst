@@ -1,0 +1,6 @@
+/Users/t4rrega/JavaResearch/WebVul/src/main/java/com/t4rrega/injection/sqli/mybatis/dao/UserMapper.java
+/Users/t4rrega/JavaResearch/WebVul/src/main/java/com/t4rrega/injection/sqli/jdbc/JdbcSqli.java
+/Users/t4rrega/JavaResearch/WebVul/src/main/java/com/t4rrega/injection/sqli/mybatis/MyBatisSqli.java
+/Users/t4rrega/JavaResearch/WebVul/src/main/java/com/t4rrega/injection/sqli/mybatis/MyBatisUtils.java
+/Users/t4rrega/JavaResearch/WebVul/src/main/java/com/t4rrega/injection/sqli/jdbc/PreparedStatementSqli.java
+/Users/t4rrega/JavaResearch/WebVul/src/main/java/com/t4rrega/injection/sqli/mybatis/bean/User.java
